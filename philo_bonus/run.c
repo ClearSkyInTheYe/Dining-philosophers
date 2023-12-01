@@ -18,7 +18,7 @@ void	philo_run(t_philo *p, t_args *args)
 		usleep(200);
 	while (1)
 	{
-		if (p->d == args->nc && p->id == args->n - 1)
+		if ((p->d == args->nc && args->nc != 0)&& p->id == args->n - 1)
 			exit(0);
 		sem_wait(p->args->forks);
 		ft_print(1, *p, args);
