@@ -58,7 +58,7 @@ int	monitoring2(t_philo *p)
 		}
 		pthread_mutex_unlock(&p->args->check);
 		pthread_mutex_lock(&p->eating);
-		if (p->ea == p->args->nc + 1)
+		if (p->ea == p->args->nc + 1 && p->args->nc != 0)
 		{
 			end(p);
 			pthread_mutex_lock(&p->args->pr);
